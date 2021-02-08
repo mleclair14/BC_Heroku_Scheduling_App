@@ -1,1 +1,0 @@
-worker: python BC_REC_BOT_2.0.py
