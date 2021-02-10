@@ -104,9 +104,10 @@ def book ():
                 actions = ActionChains(gDriver)
                 actions.move_to_element(last_book).perform()
                 gDriver.find_element_by_css_selector  ('#divBookingSlots > div > div:nth-child(1) > div > button')
-            except:
-                pass
+        except:
+            pass
             
+        
         
 
 
