@@ -68,7 +68,7 @@ def book ():
         day = gDriver.find_element_by_xpath ('//*[@id="divBookingDateSelector"]/div[2]/div[2]/button[4]').get_attribute("data-day")
         day = int(day)
         time.sleep(1)
-        gDriver.close()a
+        gDriver.close()
         gDriver.switch_to.window(gDriver.window_handles[0])
         return(day)
     
