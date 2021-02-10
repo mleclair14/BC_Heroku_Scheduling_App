@@ -80,13 +80,13 @@ def book ():
             print(datetime.now())
             print('New gym appointments not yet available.')
             print('Rechecking...')
-            time.sleep(1)
+            time.sleep(30)
             day = check_date()
 
 
         except:
             print('Rechecking...')
-            time.sleep(1)
+            time.sleep(30)
             try:
                 day = check_date()
             except:
