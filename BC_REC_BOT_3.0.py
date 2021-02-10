@@ -41,7 +41,7 @@ def book ():
     username_box = gDriver.find_element_by_css_selector ('#txtUsername')
     username_box.send_keys(USERNAME_KEY)
     password_box = gDriver.find_element_by_css_selector ('#txtPassword')
-    password_box.send_keys('PASS_KEY')
+    password_box.send_keys(PASS_KEY)
     gDriver.find_element_by_css_selector ('#btnLogin').click()
     
 
