@@ -74,38 +74,37 @@ def book ():
     
     day = check_date()
     
-    while initial_day == day:
-        try:
-            print(datetime.now())
-            print('New gym appointments not yet available.')
-            print('Rechecking in 10 seconds...')
-            time.sleep(10)
-            day = check_date()
+
+   try:
+       print(datetime.now())
+       print('New gym appointments not yet available.')
+       print('Rechecking in 10 seconds...')
+       time.sleep(10)
+       day = check_date()
 
 
-        except:
-            print('Rechecking in 10 seconds...')
-            time.sleep(10)
-            try:
-                day = check_date()
-            except:
-                print('ERROR, please restart!')
+   except:
+       print('Rechecking in 10 seconds...')
+       time.sleep(10)
+       try:
+           day = check_date()
+       except:
+           print('ERROR, please restart!')
                 
     #Book Appointment
-    if (datetime.today().strftime('%A') == 'Monday') or (datetime.today().strftime('%A') == 'Sunday') or (datetime.today().strftime('%A') == 'Saturday') or (datetime.today().strftime('%A') == 'Friday'):
-        gDriver.get('https://recconnect.bc.edu/booking/93a7d382-156f-472c-bf90-006fb897d1c4')
-        element = gDriver.find_element_by_xpath ('//*[@id="divBookingDateSelector"]/div[2]/div[2]/button[4]')
-        actions = ActionChains(gDriver)
-        actions.move_to_element(element).perform()
-        element.click()
+    if day == initial_day:
+         if (datetime.today().strftime('%A') == 'Monday') or (datetime.today().strftime('%A') == 'Sunday') or (datetime.today().strftime('%A') == 'Saturday') or (datetime.today().strftime('%A') == 'Friday'):
+             gDriver.get('https://recconnect.bc.edu/booking/93a7d382-156f-472c-bf90-006fb897d1c4')
+             element = gDriver.find_element_by_xpath ('//*[@id="divBookingDateSelector"]/div[2]/div[2]/button[4]')
+             actions = ActionChains(gDriver)
+             actions.move_to_element(element).perform()
+             element.click()
 
-        last_book = gDriver.find_element_by_css_selector ('#divBookingSlots > div > div:nth-child(9) > div > button')
-        actions = ActionChains(gDriver)
-        actions.move_to_element(last_book).perform()
-        gDriver.find_element_by_css_selector  ('#divBookingSlots > div > div:nth-child(1) > div > button')
-    
-        
-
+             last_book = gDriver.find_element_by_css_selector ('#divBookingSlots > div > div:nth-child(9) > div > button')
+             actions = ActionChains(gDriver)
+             actions.move_to_element(last_book).perform()
+             gDriver.find_element_by_css_selector  ('#divBookingSlots > div > div:nth-child(1) > div > button')
+   
 
 # In[ ]:
 
