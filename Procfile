@@ -1,1 +1,1 @@
-web: python BC_REC_BOT_3.0.py
+worker: python BC_REC_BOT_3.0.py
